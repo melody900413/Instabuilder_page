@@ -1,3 +1,10 @@
+<!----------
+    test1=pink chart >10
+    test2=blue chart >10
+    test3=BBB  chart 3=>1
+    test4=comm chart ajax    
+------------>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -251,9 +258,9 @@
                                 <div class="card mb-4">
                                     <div class="card-header">
                                         <i class="fas fa-chart-area mr-1"></i>
-                                        貼文讚數分析(未使用instabuilder&使用instabuilder)
+                                        post_comment chart test4
                                     </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40%"></canvas></div>
+                                    <div class="card-body"><canvas id="post_comment" width="100%" height="40%"></canvas></div>
                                 </div>
                             </div>
                             <div class="col-xl-6">
@@ -792,10 +799,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
-        <!--------------------------------------------------->
+        <!------------ajax & demo-chart--------------------------------->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
         <script src="assets/demo/chart-test1-demo.js"></script>
         <script src="assets/demo/chart-test2-demo.js"></script>
         <script src="assets/demo/chart-test3-demo.js"></script>
+        <script src="assets/demo/chart-test4-demo.js"></script>
         <!--------------------------------------------------->
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
@@ -803,96 +813,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
 <!------Test chart-------------------------------------------------------------------------------------------------------------------------->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-        <script>
-            // y 軸的顯示
-            var yAxis = [];
-            // 資料集合，之後只要更新這個就好了。
-            var datas = [];
-            var ctx = document.getElementById('TEST').getContext('2d');
-            var lineChart = new Chart(ctx, {
-                //Type 改成 Bar
-                type: 'bar',
-                data: {
-                    labels: yAxis,
-                    datasets: [{
-                            label: '測試資料',
-                            data: datas,
-                            backgroundColor: "#E283A0"
-                        }]
-                }
-            });
 
-            //時間格式
-            var timeFormat = 'HH:mm:ss';
-
-            function appendData()
-            {
-                //超過10 個，就把最早進來的刪掉
-                if (yAxis.length > 10) {
-                    yAxis.shift();
-                    datas.shift();
-                }
-
-                //推入y 軸新的資料 
-                yAxis.push(new moment().format(timeFormat));
-
-                //推入一筆亂數進資料 10~100
-                datas.push(Math.floor(Math.random() * 100) + 10);
-
-                //更新線圖
-                lineChart.update();
-            }
-
-            //每半秒做一次
-            setInterval(appendData, 1000);
-        </script> -->
-<!--------------------------------------------------------------------------------------------------------------------------------------->
-<!------Test2 chart------datas2-----lineChart2---appendData2--------------------------------------------------------------------------------->
-<!-- <script>
-    // y 軸的顯示
-    var yAxis = [];
-    // 資料集合，之後只要更新這個就好了。
-    var datas2 = [];
-    var ctx = document.getElementById('TEST2').getContext('2d');
-    var lineChart2 = new Chart(ctx, {
-        //Type 改成 Bar
-        type: 'bar',
-        data: {
-            labels: yAxis,
-            datasets: [{
-                    label: '測試資料2',
-                    data: datas2,
-                    backgroundColor: "#6fd6ff"
-                }]
-        }
-    });
-
-    //時間格式
-    var timeFormat = 'HH:mm:ss';
-
-    function appendData2()
-    {
-        //超過10 個，就把最早進來的刪掉
-        if (yAxis.length > 10) {
-            yAxis.shift();
-            datas2.shift();
-        }
-
-        //推入y 軸新的資料 
-        yAxis.push(new moment().format(timeFormat));
-
-        //推入一筆亂數進資料 10~100
-        datas2.push(Math.floor(Math.random() * 100) + 10);
-
-        //更新線圖
-        lineChart2.update();
-    }
-
-    //每半秒做一次
-    setInterval(appendData2, 1000);
-</script> -->
 <!--------------------------------------------------------------------------------------------------------------------------------------->
     </body>
 </html>
