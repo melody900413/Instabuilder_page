@@ -73,8 +73,8 @@ function ajaxChart(ChartName, ChartTableName, limits = 10) {
                         yAxes: [{
                             ticks: {
                                 // beginAtZero: true,
-                                //                                                          min: 10,
-                                //                                                          stepSize: 2
+                                //min: 10,
+                                //stepSize: 2
                             },
 
                         }],
@@ -83,8 +83,8 @@ function ajaxChart(ChartName, ChartTableName, limits = 10) {
                                 minRotation: 90,
 
                                 // beginAtZero: true,
-                                //                                                    min: 10,
-                                //                                                    maxTicksLimit: 10,
+                                // min: 10,
+                                // maxTicksLimit: 10,
 
                             },
 
