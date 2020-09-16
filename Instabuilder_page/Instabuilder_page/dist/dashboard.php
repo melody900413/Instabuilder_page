@@ -6,7 +6,14 @@
 ------------>
 
 <!DOCTYPE html>
-
+<?php
+session_start();
+include '../php/FindOrder.php';
+if ($_SESSION["account"] == "") {
+    header('Location: ../login/login.php');
+    $_SESSION["unLog"] = true;
+}
+?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -40,7 +47,7 @@
                         <a class="dropdown-item" href="#">Settings</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <a class="dropdown-item" href="login.php" onclick="signOut();" name="logout">Logout</a><?php echo $_SESSION["name"]; ?>-登出</a>
                     </div>
                 </li>
             </ul>
@@ -813,6 +820,27 @@
         <script src="assets/demo/datatables-demo.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+        <script>
+//GOOGLE 登出按鈕
+//onLoad();
+//signOut();
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.disconnect();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+                document.location.href = "../php/logOut.php";
+
+            }
+
+            function onLoad() {
+                gapi.load('auth2', function () {
+                    gapi.auth2.init();
+
+                });
+            }
+        </script>
 <!------Test chart-------------------------------------------------------------------------------------------------------------------------->
 
 <!--------------------------------------------------------------------------------------------------------------------------------------->
